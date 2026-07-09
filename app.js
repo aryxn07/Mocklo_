@@ -28,7 +28,7 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname , "/public"))); 
 
 app.get("/locations", async(req,res)=>{
-    const request = await fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_F9eReiaGZ7znL3SFXJf65ftYHCm0u&ipAddress") // &ipAddress=83.44.92.17 (Spain)
+    const request = await fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_F9eReiaGZ7znL3SFXJf65ftYHCm0u") // &ipAddress=83.44.92.17 (Spain)
     const jsonResponse = await request.json()
     let data={};
     data.lat=jsonResponse.location.lat;
