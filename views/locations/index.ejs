@@ -1,0 +1,134 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="main">
+        <br><br>
+        <h1>MOCKLO</h1>
+        <p>Generate Relevant Mock data based on your location.</p>
+        <button class="btn btn-dark" onclick="showinfo()">Get My Location</button>
+        <p class="location" style="display: none;">
+            <%= data.city %> , <%= data.country %> (latitute: <%=data.lat%> and longitude: <%=data.lng%> )
+        </p>
+        <br>
+    </div>
+
+    <br>
+
+    <h3 id="h2">SCHEMA OF DATA</h3>
+    <br>
+
+    <div class="main-2">
+        <div class="label">
+            <h5>Field Name</h5>
+            <h5>Type</h5>
+        </div>
+
+        <div class="mb-3 roww">
+            <input type="text" class="form-control ip" placeholder="name">
+            <input type="text" class="form-control ip" placeholder="String">
+        </div>
+        <div class="mb-3 roww">
+            <input type="text" class="form-control ip" placeholder="gender">
+            <input type="text" class="form-control ip" placeholder="Male/Female">
+        </div>
+        <div class="mb-3 roww">
+            <input type="text" class="form-control ip" placeholder="age">
+            <input type="text" class="form-control ip" placeholder="Number">
+        </div>
+        <div class="mb-3 roww">
+            <input type="text" class="form-control ip" placeholder="Email">
+            <input type="text" class="form-control ip" placeholder="fistname@gmail.com">
+        </div>
+        <div class="mb-3 roww">
+            <input type="text" class="form-control ip" placeholder="City">
+            <input type="text" class="form-control ip" placeholder="String">
+        </div>
+         <div class="mb-3 roww">
+            <input type="text" class="form-control ip" placeholder="Country">
+            <input type="text" class="form-control ip" placeholder="String">
+        </div>
+
+    </div>
+    <div class="btns">
+        <a href="https://www.mockaroo.com" target="_blank"><button class="btn btn-dark">Change
+                Schema</button></a>
+
+        <button id="btnn" type="button" class="btn btn-dark" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Generate Data</button>
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Age</th>
+                                <th>Email</th>
+                                <th>City</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <% for(result of response){ %>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= result.name %>
+                                    </td>
+                                    <td>
+                                        <%= result.gender %>
+                                    </td>
+                                    <td>
+                                        <%= result.age %>
+                                    </td>
+                                    <td>
+                                        <%= result.email %>
+                                    </td>
+                                    <td>
+                                        <%= result.city %>
+                                    </td>
+                                    <td>
+                                        <%= result.country %>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            <% } %>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    
+    <div class="main-3">
+        <br><br>
+        <h2>How it works ?</h2>
+        <p> This project shows your current geographical location, including latitude and longitude Geolocation API (Ipify)
+            to determine the place. It returns the location based on your IP address, cellular service towers location
+            and WiFi nodes that your mobile phone can detect.</p>
+        <p>Then we generate mock data based on your location with to generate localised and
+            relevant data for you.</p>
+    </div>
+
+    <script>
+        function showinfo() {
+            let element = document.querySelector(".location");
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            }
+        }
+    </script>

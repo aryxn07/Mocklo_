@@ -1,0 +1,182 @@
+
+
+/* Navbar */
+.navbar{
+    height:4rem;
+    background-color: #4a90e2;
+}
+#logo{
+   margin:  5px 5px 5px 28px;
+}
+#search-bar{
+    margin: 17px 0 0 66rem;
+}
+#search-bar input{
+    height: 2rem;
+}
+#search-bar button{
+height: 2rem;
+--bs-btn-padding-y: 4px !important;
+}
+.btn-outline-success {
+--bs-btn-color: white !important;
+--bs-btn-border-color: white !important;
+--bs-btn-hover-color: #b5daf8 !important;
+--bs-btn-hover-bg: #4a90e2!important;
+--bs-btn-hover-border-color: white !important;
+}
+
+.fa-solid{
+    font-size: 3rem;
+}
+.nav-link{
+    color: white !important;
+} 
+
+
+/* main page */
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e3f0fb;
+    height: 35vh;
+}
+#h2{
+    margin-left: 526px;
+}
+.btn{
+height: 3rem;
+margin-bottom: 1rem;
+/* background-color: #4a90e2 !important; */
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.btns button{
+    background-color: #4a90e2;
+    border: none;
+}
+#btnn{
+    margin-left: 40px;
+}
+.main-2{
+  padding: 0 160px 0 160px;
+}
+.roww{
+    display: flex;
+    margin: 0 2rem 0 2rem;
+}
+.label{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.ip{
+    margin: 0 3rem 0 3rem;
+}
+.main-3{
+    height: 35vh;
+    background-color: #e3f0fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 0 185px;
+}
+
+/*-------table----- */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+thead {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f7ff;
+}
+.modal{
+    --bs-modal-width: 910px !important;
+
+}
+
+
+
+/* footer */
+footer{
+    color: white;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: white;
+
+}
+.a {
+    margin-right: 0.25rem;
+}
+.p{
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+}
+.t {
+    margin-left: 0.25rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+.f-info-links, .f-info-socials , .f-info-brand { 
+    width: 100%;
+    /* for diplaying in middle in their place*/
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+}
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info-socials{
+    margin-top: 5px;
+}
+
+.f-info {
+    text-align: center;
+    height: 5rem;
+    display: flex;
+    background-color:#4a90e2;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
