@@ -5,6 +5,7 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const User = require("./models/user");
+app.set("trust proxy", true);
 
 
 async function main() {
@@ -28,7 +29,8 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname , "/public"))); 
 
 app.get("/locations", async(req,res)=>{
-    const request = await fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_F9eReiaGZ7znL3SFXJf65ftYHCm0u") // &ipAddress=83.44.92.17 (Spain)
+  const clientIp = req.ip;
+    const request = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.GEO_API_KEY}&ipAddress=${clientIp}`) // &ipAddress=83.44.92.17 (Spain)
     const jsonResponse = await request.json()
     let data={};
     data.lat=jsonResponse.location.lat;
